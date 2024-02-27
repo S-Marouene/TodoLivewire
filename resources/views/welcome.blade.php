@@ -27,8 +27,7 @@
 <div id="content" class="mx-auto" style="max-width:500px;">
     {{--@livewire('todoList',['lazy'=>true])--}}
     {{--OR the same--}}
-    <livewire:todolist search="" lazy/>
-   {{-- <button  class="px-3 bg-teal-500 text-white rounded" >show modal</button>--}}
+    <livewire:todolist search="{{request('search')}}" lazy/>
 </div>
 
 </body>

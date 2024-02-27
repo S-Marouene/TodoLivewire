@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Livewire;
-
 use App\Models\Todo;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -15,6 +14,8 @@ class TodoList extends Component
     public $name;
     #[Rule('required|min:3|max:50')]
     public $editTodoName;
+
+    #[Url(as: 's',history: true,keep: false)]
     public $search;
     public $editTodoId;
 
