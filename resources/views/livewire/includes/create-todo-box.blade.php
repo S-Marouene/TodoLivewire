@@ -21,13 +21,28 @@
                             class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600">Create
                         +</button>
 
+                    <button x-data
+                            x-on:click.prevent="$dispatch('open-modal',{name:'2'})"
+                            class="px-4 py-2 bg-teal-500 text-white font-semibold rounded hover:bg-blue-600" >show modal</button>
+
+                    <x-modal name="2" title="View todo2">
+                        <x-slot:body>
+                            Name : "name of modal "
+                            <div>In the body of modal</div>
+                        </x-slot:body>
+                    </x-modal>
+
+
+
                     @if(session('success'))
                         <span class="text-green-500 text-xs">{{ session('success') }}</span>
-
                     @endif
 
                 </form>
             </div>
         </div>
     </div>
+
+
+
 </div>

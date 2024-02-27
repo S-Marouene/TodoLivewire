@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Todo;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\Rule;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -53,10 +54,33 @@ class TodoList extends Component
         );
         $this->cancelEdit();
     }
+
+    public function placeholder(){
+        return view('placeholder');
+    }
+
+    public function mount($search){
+        $this->search=$search;
+    }
+
+    //With computed no need to send Todoos in render with benefits of caching
+    #[Computed()]
+    public function todos(){
+        return Todo::latest()->where('name','like',"%{$this->search}%")->paginate(5);
+    }
+
+    public Todo $selectedTodo;
+    public function viewDetails(Todo $todo)
+    {
+        $this->selectedTodo = $todo;
+
+        $this->dispatch('open-modal',name:'TodoDetails');
+    }
+
+
     public function render()
     {
-        return view('livewire.todo-list',[
-            'todos'=> Todo::latest()->where('name','like',"%{$this->search}%")->paginate(5)
-        ]);
+        sleep(0.5);
+        return view('livewire.todo-list',[]);
     }
 }
