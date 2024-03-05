@@ -5,20 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App template</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 <body>
 
-
-
 <livewire:navbar/>
 
-<div id="content" class="mx-auto" style="max-width:500px;">
-    {{--@livewire('todoList',['lazy'=>true])--}}
-    {{--OR the same--}}
-    <livewire:todolist search="{{request('search')}}" lazy/>
-
-</div>
 
 </body>
 </html>
