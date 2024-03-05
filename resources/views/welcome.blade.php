@@ -15,7 +15,6 @@
     {{--@livewire('todoList',['lazy'=>true])--}}
     {{--OR the same--}}
     <livewire:todolist search="{{request('search')}}" lazy/>
-
 </div>
 
 </body>
