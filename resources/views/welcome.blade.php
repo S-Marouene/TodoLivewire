@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App template</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
+    @vite('resources/css/app.js')
 </head>
 <body>
-
-
 
 <livewire:navbar/>
 
