@@ -1,3 +1,3 @@
 <div>
-    <span class="font-bold bg-red-500">{{$value}}</span>
+    <span class="font-bold bg-blue-400">{{$value}}</span>
 </div>
